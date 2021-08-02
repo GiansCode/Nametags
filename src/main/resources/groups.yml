@@ -1,0 +1,6 @@
+groups:
+  'default':
+    prefix: '<gray>User '
+    suffix: '<red>%player_name'
+    priority: 1
+    sort: 1

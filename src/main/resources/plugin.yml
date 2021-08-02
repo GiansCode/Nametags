@@ -1,0 +1,5 @@
+name: Nametags
+version: ${project.version}
+author: xQuickGlare
+api-version: 1.13
+main: io.alerium.nametags.NametagsPlugin

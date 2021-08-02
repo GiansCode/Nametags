@@ -1,0 +1,6 @@
+players:
+  '<uuid>':
+    prefix: '<red><bold>Owner'
+    suffix: '<gold>%player_name%'
+    priority: 1
+    sort: 1
