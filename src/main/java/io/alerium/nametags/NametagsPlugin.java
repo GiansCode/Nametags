@@ -1,5 +1,6 @@
 package io.alerium.nametags;
 
+import io.alerium.nametags.commands.ReloadCommand;
 import io.alerium.nametags.groups.NametagManager;
 import io.alerium.nametags.utils.Configuration;
 import lombok.Getter;
@@ -25,6 +26,8 @@ public class NametagsPlugin extends JavaPlugin {
 
         nametagManager = new NametagManager(this);
         nametagManager.enable();
+
+        getCommand("nametagsreload").setExecutor(new ReloadCommand(this, nametagManager));
     }
 
     @Override

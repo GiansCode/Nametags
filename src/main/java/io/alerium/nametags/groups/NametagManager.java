@@ -42,6 +42,18 @@ public class NametagManager {
         new NametagUpdateTask(plugin, this).runTaskTimerAsynchronously(plugin, 20, plugin.getConfiguration().getConfig().getInt("refresh-interval"));
     }
 
+    public void reload() {
+        plugin.getConfiguration().reload();
+        plugin.getGroupsConfig().reload();
+        plugin.getPlayersConfig().reload();
+
+        groups.clear();
+        uuidToGroup.cleanUp();
+
+        loadGroups();
+        loadPlayers();
+    }
+
     public void disable() {
         teams.values().forEach(team -> team.constructRemoveTeamPacket().broadcastPacket());
         teams.clear();

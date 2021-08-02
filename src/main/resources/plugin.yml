@@ -3,3 +3,7 @@ version: ${project.version}
 author: xQuickGlare
 api-version: 1.13
 main: io.alerium.nametags.NametagsPlugin
+depend: [PlaceholderAPI, ProtocolLib]
+commands:
+  nametagsreload:
+    description: A command to reload this plugin

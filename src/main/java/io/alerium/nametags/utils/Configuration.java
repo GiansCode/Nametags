@@ -1,6 +1,8 @@
 package io.alerium.nametags.utils;
 
 import lombok.Getter;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
@@ -36,6 +38,10 @@ public class Configuration {
         } catch (IOException e) {
             plugin.getLogger().log(Level.SEVERE, "An error occurred while saving the config file.");
         }
+    }
+
+    public Component getMessage(String path) {
+        return MiniMessage.get().deserialize(config.getString(path));
     }
 
 }

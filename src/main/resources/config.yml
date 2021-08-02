@@ -1,1 +1,5 @@
 refresh-interval: 100 # Ticks
+
+messages:
+  noPermission: "<red>You don't have the permission to use this command"
+  reloaded: "<green>Plugin reloaded!"
