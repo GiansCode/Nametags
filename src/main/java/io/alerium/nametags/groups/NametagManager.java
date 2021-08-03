@@ -68,6 +68,7 @@ public class NametagManager {
         WrapperPlayServerScoreboardTeam packet = team.constructRemovePlayerPacket(player.getName());
         if (team.getPlayers().isEmpty()) {
             team.constructRemoveTeamPacket().broadcastPacket();
+            teams.remove(team.getId());
             return;
         }
 

@@ -17,7 +17,10 @@ public class PlayerListener implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-        Bukkit.getScheduler().runTaskLater(plugin, () -> manager.getTeams().forEach(team -> team.constructCreateTeamPacket().sendPacket(event.getPlayer())), 5);
+        Bukkit.getScheduler().runTaskLater(plugin, () -> manager.getTeams().forEach(team -> {
+            if (!team.getPlayers().contains(event.getPlayer().getName()))
+                team.constructCreateTeamPacket().sendPacket(event.getPlayer());
+        }), 5);
     }
 
     @EventHandler
